@@ -38,38 +38,44 @@ export class Fatura {
   @Prop()
   dataLeituraProxima: string;
 
-  @Prop()
-  energiaEletricaKwh: string;
+  // =============================
+  // ENERGIAS (NUMÉRICOS)
+  // =============================
+  @Prop({ type: Number, default: 0 })
+  energiaEletricaKwh: number;
 
-  @Prop()
-  energiaSceeeKwh: string;
+  @Prop({ type: Number, default: 0 })
+  energiaSceeeKwh: number;
 
-  @Prop()
-  consumoEnergiaEletricaKwh: string;
+  @Prop({ type: Number, default: 0 })
+  consumoEnergiaEletricaKwh: number;
 
-  @Prop()
-  energiaCompensadaKwh: string;
+  @Prop({ type: Number, default: 0 })
+  energiaCompensadaKwh: number;
 
-  @Prop()
-  energiaCompensadaGdiRs: string;
+  // =============================
+  // VALORES (NUMÉRICOS)
+  // =============================
+  @Prop({ type: Number, default: 0 })
+  energiaCompensadaGdiRs: number;
 
-  @Prop()
-  energiaEletricaRs: string;
+  @Prop({ type: Number, default: 0 })
+  energiaEletricaRs: number;
 
-  @Prop()
-  energiaSceeeRs: string;
+  @Prop({ type: Number, default: 0 })
+  energiaSceeeRs: number;
 
-  @Prop()
-  contribIlumPublicaRs: string;
+  @Prop({ type: Number, default: 0 })
+  contribIlumPublicaRs: number;
 
-  @Prop()
-  valorTotalSemGdRs: string;
+  @Prop({ type: Number, default: 0 })
+  valorTotalSemGdRs: number;
 
-  @Prop()
-  economiaGdRs: string;
+  @Prop({ type: Number, default: 0 })
+  economiaGdRs: number;
 
-  @Prop()
-  totalAPagarRs: string;
+  @Prop({ type: Number, default: 0 })
+  totalAPagarRs: number;
 }
 
 export const FaturaSchema = SchemaFactory.createForClass(Fatura);
@@ -77,5 +83,5 @@ export const FaturaSchema = SchemaFactory.createForClass(Fatura);
 // 🔥 ÍNDICE ÚNICO (proteção real no banco)
 FaturaSchema.index(
   { noCliente: 1, mesReferencia: 1 },
-  { unique: true }
+  { unique: true },
 );
