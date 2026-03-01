@@ -7,7 +7,9 @@ import { Fatura, FaturaSchema } from './fatura.entity';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://lucas:5n6yRTrLpdLSktF@lumi.vqlxcpv.mongodb.net/lumi?retryWrites=true&w=majority'), 
+    MongooseModule.forRoot(
+      'mongodb+srv://lucas:5n6yRTrLpdLSktF@lumi.vqlxcpv.mongodb.net/lumi?retryWrites=true&w=majority',
+    ),
     MongooseModule.forFeature([{ name: Fatura.name, schema: FaturaSchema }]),
   ],
   controllers: [AppController],
